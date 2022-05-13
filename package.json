@@ -3,9 +3,11 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "serve": "vue-cli-service serve",
+        "dev": "vue-cli-service serve",
         "build": "vue-cli-service build",
-        "cli": "node ./src/tools/cli.js"
+        "cli": "node ./src/tools/cli.js",
+        "lint": "eslint -c .eslintrc.js src/**/*.vue src/**/*.js src/**/*.ts",
+        "fix": "eslint -c .eslintrc.js src/**/*.vue src/**/*.js src/**/*.ts --fix"
     },
     "dependencies": {
         "core-js": "^3.6.5",
@@ -16,6 +18,7 @@
         "vuex": "^3.4.0"
     },
     "devDependencies": {
+        "@tangxiaomi/eslint-config": "^0.0.3",
         "@vue/cli-plugin-babel": "~4.5.0",
         "@vue/cli-plugin-router": "~4.5.0",
         "@vue/cli-plugin-typescript": "~4.5.0",

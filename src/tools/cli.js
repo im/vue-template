@@ -1,5 +1,3 @@
-
-
 'use strict'
 
 const os = require('os')
@@ -12,7 +10,6 @@ const gitUser = getGitUser()
 const version = require('../../package.json').version
 
 const generate = require('./tpl/generate')
-
 
 yargs.command(['add <componentPath>', 'a'], 'Add a component to project', {
     type: {
@@ -32,7 +29,7 @@ yargs.command(['add <componentPath>', 'a'], 'Add a component to project', {
     const componentName = componentPath.substr(componentPath.lastIndexOf('/') + 1)
     const ComponentName = componentName[0].toLocaleUpperCase() + componentName.substr(1)
     let type = args.type
-    
+
     if (!type) {
         type = componentPath.split('/')[0]
         if (/s$/.test(type)) {
@@ -51,11 +48,8 @@ yargs.command(['add <componentPath>', 'a'], 'Add a component to project', {
         version,
         curDate: moment().format('YYYY-MM-DD HH:mm:ss')
     })
-    
+
 })
-.alias('version', 'v')
-.help()
-.argv
-
-
-
+    .alias('version', 'v')
+    .help()
+    .argv
